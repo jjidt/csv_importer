@@ -1,9 +1,20 @@
 var express = require('express');
 var router = express.Router();
+var multer = require('multer');
+var multSettings = {
+    inMemory: true
+ };
+
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Album List' });
+router.get('/', function (req, res) {
+  	res.render('index', { title: 'Album List' });
+});
+
+/* POST album information */
+
+router.post('/album', multer(multSettings), function (req, res) {
+	console.log(req);
 });
 
 module.exports = router;
