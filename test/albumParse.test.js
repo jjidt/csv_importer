@@ -51,4 +51,14 @@ describe('albumParse', function() {
 			});
 		});
 	});
+
+	it('should ignore whitespace on both ends of header line labels', function(done) {
+		fs.readFile('csv/whitespace.csv', function(err, data) {
+			if (err) throw err;
+			albumParse(data, function(err, parsedData) {
+				expect(err).to.not.exist();
+				done();
+			})
+		});
+	});
 });
