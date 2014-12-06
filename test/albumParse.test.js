@@ -41,4 +41,14 @@ describe('albumParse', function() {
 			});
 		});
 	});
+
+	it('should not return an error when the header line is formatted correctly', function(done) {
+		fs.readFile('csv/test.csv', function(err, data) {
+			if (err) throw err;
+			albumParse(data, function(err, parsedData) {
+				expect(err).to.not.exist();
+				done();
+			});
+		});
+	});
 });
