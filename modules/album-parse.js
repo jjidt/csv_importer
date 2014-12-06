@@ -11,7 +11,7 @@ module.exports = function albumParse (csvFile, callback) {
 	headerLine = csvLines.shift().split(',');
 
 	headerLine = _.map(headerLine, function(label) {
-		return label.toLowerCase();
+		return label.toLowerCase().trim();
 	});
 
 	if (!_.isEqual(headerLine, ['artist', 'album', 'release year', 'rating'])) {
