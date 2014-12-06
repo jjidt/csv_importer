@@ -5,7 +5,6 @@ var multSettings = {
     inMemory: true
  };
 
-
 /* GET home page. */
 router.get('/', function (req, res) {
   	res.render('index', { title: 'Album List' });
@@ -14,7 +13,9 @@ router.get('/', function (req, res) {
 /* POST album information */
 
 router.post('/album', multer(multSettings), function (req, res) {
-	console.log(req);
+	if(req.files && req.files.album_csv) {
+		res.send(req.files.album_csv.buffer.toString());
+	}
 });
 
 module.exports = router;
