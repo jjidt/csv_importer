@@ -22,7 +22,26 @@ module.exports = function albumParse (csvFile, callback) {
 
 	});
 
-
+	data = [
+					{
+						"artist": "ABBA",
+						"album": "abbaAlbum",
+						"release-year": 1975,
+						"rating": 1
+					},
+					{
+						"artist": "HUEYLEWIS",
+						"album": "hueyLewis",
+						"release-year": 1985,
+						"rating": 3
+					},
+					{
+						"artist": "ZZTOP",
+						"album": "zzTopAlbum",
+						"release-year": 1980,
+						"rating": 5
+					}
+				]
 
 	callback(err, data);
 }
