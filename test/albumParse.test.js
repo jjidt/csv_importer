@@ -71,4 +71,14 @@ describe('albumParse', function() {
 			});
 		});
 	});
+
+	it('should return a number title as a string', function(done) {
+		fs.readFile('csv/number-title.csv', function(err, data) {
+			if (err) throw err;
+			albumParse(data, function(err, parsedData) {
+				expect(parsedData[3].album).to.eq('5150');
+				done();
+			});
+		});
+	});
 });

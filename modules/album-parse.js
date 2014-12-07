@@ -12,10 +12,13 @@ function albumParse (csvFile, callback) {
 		headerLine,
 		data = [],
 		err,
+		splitItems,
 		preparedItems,
-		keys = ['artist', 'album', 'release-year', 'rating'],
 		albumData;
 
+	/**
+	 * convert buffer to string and split by lines, split header-line into lowercase array of items
+	 */
 	csvLines = csvFile.toString().split('\n');
 	headerLine = csvLines.shift().split(',');
 	headerLine = _.map(headerLine, function(label) {
@@ -27,7 +30,7 @@ function albumParse (csvFile, callback) {
 	 */
 	if (!_.isEqual(headerLine, ['artist', 'album', 'release year', 'rating'])) {
 		err = new Error;
-		err.message = "The header line in your csv file is formatted incorrectly, please make sure this is an album info file with columns labeled artist,album,release year,rating";
+		err.message = 'The header line in your csv file is formatted incorrectly, please make sure this is an album info file with columns labeled artist,album,release year,rating';
 		callback(err, data);
 		return false;
 	}	
@@ -35,9 +38,14 @@ function albumParse (csvFile, callback) {
 	/**
 	 * take the album-info Array and parse each record into a json object
 	 */
-	_.each(csvLines, function(line) {
-		preparedItems = line.split(',', 4).map(function(item) { return +item > -1 ? +item || null : item.trim()});
-		albumData = _.zipObject(keys, preparedItems);
+	_.forEach(csvLines, function(line) {
+		splitItems = line.split(',', 4);
+		albumData = {
+			"artist": splitItems[0].trim(),
+			"album": splitItems[1].trim(),
+			"release-year": +splitItems[2] || null,
+			"rating": +splitItems[3] || null
+		}
 		data.push(albumData);
 	});
 
