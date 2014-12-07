@@ -13,7 +13,6 @@ function albumParse (csvFile, callback) {
 		data = [],
 		err,
 		splitItems,
-		preparedItems,
 		albumData;
 
 	/**
@@ -41,10 +40,10 @@ function albumParse (csvFile, callback) {
 	_.forEach(csvLines, function(line) {
 		splitItems = line.split(',', 4);
 		albumData = {
-			"artist": splitItems[0].trim(),
-			"album": splitItems[1].trim(),
-			"release-year": +splitItems[2] || null,
-			"rating": +splitItems[3] || null
+			'artist': splitItems[0].trim(),
+			'album': splitItems[1].trim(),
+			'release-year': +splitItems[2] || null,
+			'rating': +splitItems[3] || null
 		}
 		data.push(albumData);
 	});
