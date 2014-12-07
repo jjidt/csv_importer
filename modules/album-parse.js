@@ -4,7 +4,7 @@ module.exports = albumParse;
  * albumParse parses csv album-info into an array of json objects
  * @param  {Buffer}   csvFile  [buffered csv file of album-info]
  * @param  {Function} callback [function with err and data parameters for dealing with parsed data]
- * @return {boolean}           [true if successfully parsed, false if not]
+ * @return {boolean}           [true if successfully parsed, false if unsuccessful]
  */
 function albumParse (csvFile, callback) {
 	var _ = require('lodash'),
@@ -42,5 +42,6 @@ function albumParse (csvFile, callback) {
 	});
 
 	callback(err, data);
+	
 	return true;
 }

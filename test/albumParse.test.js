@@ -58,7 +58,16 @@ describe('albumParse', function() {
 			albumParse(data, function(err, parsedData) {
 				expect(err).to.not.exist();
 				done();
-			})
+			});
+		});
+	});
+
+	it('should convert empty number fields to null value', function(done) {
+		fs.readFile('csv/empty-values.csv', function(err, data) {
+			if (err) throw err;
+			albumParse(data, function(err, parsedData) {
+				expect(parsedData[1].rating).to.eq(null);
+			});
 		});
 	});
 });
