@@ -36,7 +36,7 @@ describe('albumParse', function() {
 		fs.readFile('csv/incorrect-header.csv', function(err, data) {
 			if (err) throw err;
 			albumParse(data, function(err, parsedData) {
-				expect(err.message).to.equal("The header line in your csv file is formatted incorrectly, please make sure this is an album info file with columns labeled artist,album,release,year,rating");
+				expect(err.message).to.equal("The header line in your csv file is formatted incorrectly, please make sure this is an album info file with columns labeled artist,album,release year,rating");
 				done();
 			});
 		});
