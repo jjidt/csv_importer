@@ -3,7 +3,7 @@ module.exports = albumParse;
 /**
  * albumParse parses csv album-info into an array of json objects
  * @param  {Buffer}   csvFile  [buffered csv file of album-info]
- * @param  {Function} callback [provides err and data parameters for the parsed data]
+ * @param  {Function} callback [function with err and data parameters for dealing with parsed data]
  * @return {boolean}           [true if successfully parsed, false if not]
  */
 function albumParse (csvFile, callback) {
