@@ -4,6 +4,7 @@ var multer = require('multer');
 var multSettings = {
     inMemory: true
  };
+var Record = require('../models/record');
 
 /* GET home page. */
 router.get('/', function (req, res) {
