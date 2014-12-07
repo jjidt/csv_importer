@@ -67,6 +67,7 @@ describe('albumParse', function() {
 			if (err) throw err;
 			albumParse(data, function(err, parsedData) {
 				expect(parsedData[1].rating).to.eq(null);
+				done();
 			});
 		});
 	});

@@ -36,12 +36,12 @@ function albumParse (csvFile, callback) {
 	 * take the album-info Array and parse each record into a json object
 	 */
 	_.each(csvLines, function(line) {
-		preparedItems = line.split(',', 4).map(function(item) { return +item ? +item : item.trim()});
+		preparedItems = line.split(',', 4).map(function(item) { return +item > -1 ? +item || null : item.trim()});
 		albumData = _.zipObject(keys, preparedItems);
 		data.push(albumData);
 	});
 
 	callback(err, data);
-	
+
 	return true;
 }
