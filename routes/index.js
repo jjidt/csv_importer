@@ -5,17 +5,21 @@ var multSettings = {
     inMemory: true
  };
 var Record = require('../models/record');
+var albumParse = require('../helpers/album-parse');
 
 /* GET home page. */
 router.get('/', function (req, res) {
   	res.render('index', { title: 'Album List' });
 });
 
+/* GET all albums */
+router.get('/')
+
 /* POST album information */
 
 router.post('/album', multer(multSettings), function (req, res) {
 	if(req.files && req.files.album_csv) {
-		res.send(req.files.album_csv.buffer.toString());
+		req.files.album_csv
 	}
 });
 
