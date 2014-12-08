@@ -20,7 +20,7 @@ router.get('/', function (req, res) {
 
 /* GET all albums */
 router.get('/albums', function (req, res) {
-	Record.find({}, function (err, data) {
+	Record.find({}).sort({'release-year': -1}).exec(function (err, data) {
 		res.render('albums', {
 			items: data
 		});

@@ -4,7 +4,7 @@ block content
 	ul
 		each item in items
 			li
-				.artist= item.artist 
-				.album= item.album 
-				.release-year= item['release-year']
-				.rating= item.rating
+				.artist= 'Artist: ' + item.artist 
+				.album= 'Album: ' + item.album 
+				.release-year= 'Release Year: ' + item['release-year']
+				.rating= 'Rating: ' + item.rating
