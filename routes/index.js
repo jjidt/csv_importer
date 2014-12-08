@@ -8,19 +8,23 @@ var Record = require('../models/record');
 var albumParse = require('../helpers/album-parse');
 var _ = require('lodash');
 var failedItems;
+var constants = require('constants');
 
 /* GET home page. */
 router.get('/', function (req, res) {
   	res.render('index', { 
   		title: 'Album List', 
-  		alert: req.flash('alert'),
+  		alert: req.flash('alert')
   	});
 });
 
 /* GET all albums */
 router.get('/albums', function (req, res) {
-	req.flash('alert', 'the flash worked');
-	res.redirect('/');
+	Record.find({}, function (err, data) {
+		res.render('albums', {
+			items: data
+		});
+	});
 });
 
 /* POST album information */
@@ -37,7 +41,9 @@ router.post('/album', multer(multSettings), function (req, res) {
 					if (err) return failedItems.push(item);
 				});
 			});
-			req.flash('success', data.length - )
+			req.flash('success', (data.length - failedItems.length) +  constants.success);
+			req.flash('fail', failedItems.length + constants.fail);
+			res.redirect('/albums');
 		});
 	}
 });

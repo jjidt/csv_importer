@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	ul
+		each item in items
+			li
+				.artist= item.artist 
+				.album= item.album 
+				.release-year= item['release-year']
+				.rating= item.rating
