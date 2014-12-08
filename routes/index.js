@@ -13,13 +13,19 @@ router.get('/', function (req, res) {
 });
 
 /* GET all albums */
-router.get('/')
+router.get('/albums', function (req, res) {
+
+});
 
 /* POST album information */
 
 router.post('/album', multer(multSettings), function (req, res) {
 	if(req.files && req.files.album_csv) {
-		req.files.album_csv
+		albumParse(req.files.album_csv.buffer, function (err, data) {
+			if (err) res.send(err);
+
+			res.send(data);
+		});
 	}
 });
 
