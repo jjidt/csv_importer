@@ -14,7 +14,6 @@ router.get('/', function (req, res) {
   	res.render('index', { 
   		title: 'Album List', 
   		alert: req.flash('alert'),
-
   	});
 });
 
@@ -28,7 +27,7 @@ router.get('/albums', function (req, res) {
 router.post('/album', multer(multSettings), function (req, res) {
 	if(req.files && req.files.album_csv) {
 		failedItems = [];
-		albumParse(req.files.album_csv.buffer, function (err, data) {
+		albumParse(req.files.album_csv.buffer, function (err, data) { 
 			if (err) {
 				req.flash('alert', err.message);
 				res.redirect('back');
@@ -38,6 +37,7 @@ router.post('/album', multer(multSettings), function (req, res) {
 					if (err) return failedItems.push(item);
 				});
 			});
+			req.flash('success', data.length - )
 		});
 	}
 });
