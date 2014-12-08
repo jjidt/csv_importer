@@ -4,18 +4,11 @@ var expect = require('chai').expect,
 	mongoose = require('mongoose');
 
 describe(Record, function() {
+
 	beforeEach(function(done) {
     	if (mongoose.connection.db) return done();
 
     	mongoose.connect(testDB, done);
-	});
-
-	after(function(done) {
-		if (mongoose.connection.db) {
-			mongoose.connection.db.dropDatabase(function() {
-				done();
-			});
-		}
 	});
 
 	describe('#save()', function() {
@@ -53,6 +46,6 @@ describe(Record, function() {
 				expect(err).to.exist();
 				done();
 			});
-		})
+		});
 	});
 });

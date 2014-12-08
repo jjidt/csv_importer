@@ -11,13 +11,11 @@ var recordSchema = new mongoose.Schema({
 		index: true,
 		required: true
 	},
-	'release-date': {
+	'release-year': {
 		type: Number,
-		index: true
 	},
 	rating: {
 		type: Number,
-		index: true
 	}
 });
 
