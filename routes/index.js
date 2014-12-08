@@ -13,7 +13,8 @@ var failedItems;
 router.get('/', function (req, res) {
   	res.render('index', { 
   		title: 'Album List', 
-  		alert: req.flash('alert')
+  		alert: req.flash('alert'),
+
   	});
 });
 
@@ -28,7 +29,10 @@ router.post('/album', multer(multSettings), function (req, res) {
 	if(req.files && req.files.album_csv) {
 		failedItems = [];
 		albumParse(req.files.album_csv.buffer, function (err, data) {
-			if (err) res.render(err);
+			if (err) {
+				req.flash('alert', err.message);
+				res.redirect('back');
+			}
 			_.forEach(data, function(item) {
 				new Record(item).save(function(err) {
 					if (err) return failedItems.push(item);
