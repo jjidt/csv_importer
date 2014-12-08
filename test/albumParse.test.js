@@ -1,6 +1,6 @@
 var expect = require('chai').expect,
 	fs = require('fs'),
-	albumParse = require('../modules/album-parse');
+	albumParse = require('../helpers/album-parse');
 
 describe('albumParse', function() {
 	it('should take a csv file and return an array of json objects', function(done) {
