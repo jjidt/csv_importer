@@ -33,5 +33,18 @@ describe(Record, function() {
 				done();
 			});
 		});
+
+		it('should validate the presence of album title before saving to database', function(done) {
+			new Record({
+				artist: 'a',
+				album: '',
+				'release-year': 1994,
+				rating: 5
+			})
+			.save(function(err) {
+				expect(err).to.exist();
+				done();
+			});
+		})
 	});
 });

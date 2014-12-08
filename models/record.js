@@ -8,7 +8,8 @@ var recordSchema = new mongoose.Schema({
 	},
 	album: {
 		type: String,
-		index: true
+		index: true,
+		required: true
 	},
 	'release-date': {
 		type: Number,
