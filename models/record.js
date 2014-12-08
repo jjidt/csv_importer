@@ -3,7 +3,8 @@ var mongoose = require('mongoose');
 var recordSchema = new mongoose.Schema({
 	artist: {
 		type: String,
-		index: true
+		index: true,
+		required: true
 	},
 	album: {
 		type: String,
