@@ -2,12 +2,17 @@ doctype html
 html
 	head
 		title= title
-		link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
-		link(rel="stylesheet", href="/stylesheets/style.css")
+		link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
 	body
 		.navbar.navbar-fixed-top
-			.col-sm-6
+			.col-sm-3.header-image
 				img(src='images/albumimporter.svg')
+				ul(class='nav navbar-nav')
+			.col-sm-3.nav-links
+				a(href='/') IMPORT FILE  
+				span | 
+				a(href='/albums')  LIST ALBUMS
 			.col-sm-6
 				.alert-box= alert
 				.success-box= success

@@ -39,7 +39,6 @@ router.post('/album', multer(multSettings), function (req, res) {
 			}
 
 			saveItems(data, function(failedItems) {
-				console.log(failedItems);
 				req.flash('success', (data.length - failedItems.length) + ' ' + constants.success);
 				if (failedItems.length > 0) {
 					req.flash('fail', failedItems.length + ' ' + constants.fail);
@@ -56,7 +55,7 @@ router.post('/album', multer(multSettings), function (req, res) {
 /**
  * turn array of objects into mongoose models and save to mongodb, keep track of unsaved items
  * @param  {array}  data [array of album information objects]
- * @param  {callback function} cb   [function to be called when all records have been saved]
+ * @param  {callback function} cb   [function to be called after all records have attempted save]
  * @return {array} [failed items, provided as parameter to callback function] 
  */
 function saveItems(data, cb) {
@@ -66,7 +65,6 @@ function saveItems(data, cb) {
 		new Record(item).save(function(error) {
 			if (error) { 
 				failedItems.push(item);
-				console.log(error);
 			}
 			callback()
 		});

@@ -6,9 +6,17 @@ body {
     background-color: #FFFFFF;
     border-bottom: 2px solid black;
     padding-bottom: 4px; }
-    body .navbar img {
-      margin-left: -75px;
-      margin-top: 5px; }
+    body .navbar .header-image {
+      width: auto; }
+      body .navbar .header-image img {
+        margin-left: -85px;
+        margin-top: 5px;
+        margin-right: -100px; }
+    body .navbar .nav-links {
+      margin-top: 30px; }
+      @media screen and (max-width: 767px) {
+        body .navbar .nav-links {
+          margin-top: -10px; } }
     body .navbar .alert-box {
       color: red; }
     body .navbar .success-box {
