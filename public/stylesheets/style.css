@@ -27,7 +27,7 @@ body {
     margin-top: 140px; }
     @media screen and (max-width: 767px) {
       body .csv-upload, body .album-list {
-        margin-top: 200px; } }
+        margin-top: 220px; } }
   body .csv-upload .submit-btn {
     background-color: #f8c816; }
     body .csv-upload .submit-btn:hover {

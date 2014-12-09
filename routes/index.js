@@ -30,7 +30,8 @@ router.get('/albums', function (req, res) {
 
 /* POST album information */
 router.post('/album', multer(multSettings), function (req, res) {
-	if(req.files && req.files.album_csv) {
+	if(req.files && req.files.album_csv && req.files.album_csv.extension === 'csv') {
+		console.log(req.files.album_csv);
 		albumParse(req.files.album_csv.buffer, function (err, data) {
 
 			if (err) {
@@ -46,6 +47,9 @@ router.post('/album', multer(multSettings), function (req, res) {
 				res.redirect('/albums');
 			});
 		});
+	} else if (req.files && req.files.album_csv) {
+		req.flash('alert', constants.wrongType);
+		res.redirect('back');
 	} else {
 		req.flash('alert', constants.noFile);
 		res.redirect('back');
