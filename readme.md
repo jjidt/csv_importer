@@ -49,6 +49,7 @@ It will not allow repeats, and each album must have values for both the Artist a
 - improve album-parse module to handle album titles containing commas
 - on form submit, navigate to page to fill in invalid information for unsaved albums
 - pre-save hook to grab url for album artwork
+- user accounts and auth
 
 ## Authors
 
