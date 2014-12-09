@@ -1,17 +1,29 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,800);
 body {
-  color: black; }
+  color: black;
+  font-family: "Open Sans", sans-serif; }
   body .navbar {
     background-color: #FFFFFF;
-    height: 120px;
-    border-bottom: 2px solid black; }
+    border-bottom: 2px solid black;
+    padding-bottom: 4px; }
     body .navbar img {
       margin-left: -75px;
       margin-top: 5px; }
-  body .csv-upload {
+    body .navbar .alert-box {
+      color: red; }
+    body .navbar .success-box {
+      color: green; }
+    body .navbar .fail-box {
+      color: red; }
+  body .csv-upload, body .album-list {
     margin-top: 140px; }
-  body .album-list {
-    margin-top: 140px; }
+    @media screen and (max-width: 767px) {
+      body .csv-upload, body .album-list {
+        margin-top: 200px; } }
+  body .csv-upload .submit-btn {
+    background-color: #f8c816; }
+    body .csv-upload .submit-btn:hover {
+      background-color: rgba(0, 0, 0, 0.35); }
   body .album-list-item {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;

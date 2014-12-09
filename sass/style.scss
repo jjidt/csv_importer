@@ -3,26 +3,47 @@
 
 $open-sans: 'Open Sans', sans-serif;
 $content-margin-top: 140px;
+$content-margin-top-break: 200px;
+$break: 767px;
+
 
 body {
 	color: $black;
+	font-family: $open-sans;
 
 	.navbar {
 		background-color: $white;
-		height: 120px;
 		border-bottom: 2px solid $black;
+		padding-bottom: 4px;
 		img {
 			margin-left: -75px;
 			margin-top: 5px;
 		}
+		.alert-box {
+			color: red;
+		}
+		.success-box {
+			color: green;
+		}
+		.fail-box {
+			color: red;
+		}
+	}
+
+	.csv-upload, .album-list{
+		margin-top: $content-margin-top;
+		@media screen and (max-width: $break) {
+  	  		margin-top: $content-margin-top-break;
+		}
 	}
 
 	.csv-upload {
-		margin-top: $content-margin-top;
-	}
-
-	.album-list {
-		margin-top: $content-margin-top;
+		.submit-btn {
+			background-color: $gold;
+			&:hover {
+				background-color: $translucentBlack;
+			}
+		}
 	}
 
 	.album-list-item {
