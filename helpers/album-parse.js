@@ -28,7 +28,7 @@ function albumParse (csvFile, callback) {
 	 * check if the header line has the correct labels
 	 */
 	if (!_.isEqual(headerLine, ['artist', 'album', 'release year', 'rating'])) {
-		err = new Error;
+		err = new Error();
 		err.message = 'The header line in your csv file is formatted incorrectly, please make sure this is an album info file with columns labeled artist,album,release year,rating';
 		callback(err, data);
 		return false;
@@ -44,7 +44,7 @@ function albumParse (csvFile, callback) {
 			'album': splitItems[1].trim(),
 			'release-year': +splitItems[2] || null,
 			'rating': +splitItems[3] || null
-		}
+		};
 		data.push(albumData);
 	});
 

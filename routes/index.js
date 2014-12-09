@@ -66,7 +66,7 @@ function saveItems(data, cb) {
 			if (error) { 
 				failedItems.push(item);
 			}
-			callback()
+			callback();
 		});
 	}, function () {
 			cb(failedItems);

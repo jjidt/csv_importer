@@ -37,7 +37,7 @@ app.use(session({
   secret: 'mindspaced',
   resave: false,
   saveUninitialized: true
-}))
+}));
 app.use(flash());
 
 app.use('/', routes);

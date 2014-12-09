@@ -4,4 +4,4 @@ module.exports = {
 		production: '',
 		test: 'mongodb://localhost/album-order-test' 
 	}
-}
+};
