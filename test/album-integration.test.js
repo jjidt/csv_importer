@@ -19,13 +19,11 @@ describe('submitting a file', function () {
 		browser.visit('/albums', function (error) {
 		  if (error) throw error;
 
-		  // Fill email, password and submit form
 			browser.
 				attach('album_csv', 'csv/integration-test.csv').
 				pressButton('Submit', function(error) {
 					if (error) throw error;
 
-				// Form submitted, new page loaded.
 				expect(browser.success).to.equal(true);
 				expect(browser.text('body')).to.contain('successfully');
 				done();
@@ -37,13 +35,11 @@ describe('submitting a file', function () {
 		browser.visit('/albums', function (error) {
 		  if (error) throw error;
 
-		  // Fill email, password and submit form
 			browser.
 				attach('album_csv', 'csv/integration-incorrect-header.csv').
 				pressButton('Submit', function(error) {
 					if (error) throw error;
 
-				// Form submitted, new page loaded.
 				expect(browser.success).to.equal(true);
 				expect(browser.text('body')).to.contain('formatted incorrectly');
 				done();
