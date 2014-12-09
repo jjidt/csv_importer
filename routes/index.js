@@ -7,7 +7,6 @@ var multSettings = {
 var Record = require('../models/record');
 var albumParse = require('../helpers/album-parse');
 var _ = require('lodash');
-var failedItems;
 var constants = require('../constants');
 var async = require('async');
 
@@ -33,27 +32,38 @@ router.get('/albums', function (req, res) {
 /* POST album information */
 router.post('/album', multer(multSettings), function (req, res) {
 	if(req.files && req.files.album_csv) {
-		albumParse(req.files.album_csv.buffer, function (err, data) { 
+		albumParse(req.files.album_csv.buffer, function (err, data) {
+
 			if (err) {
 				req.flash('alert', err.message);
 				res.redirect('back');
 			}
-			failedItems = [];
-			_.forEach(data, function(item) {
-				new Record(item).save(function(error) {
-					if (error) { 
-						console.log(error);
-						failedItems.push(item);
-						console.log(failedItems);
-					}
-				});
+
+			saveItems(data, function(failedItems) {
+				console.log(failedItems);
+				req.flash('success', (data.length - failedItems.length) + ' ' + constants.success);
+				if (failedItems.length > 0) {
+					req.flash('fail', failedItems.length + ' ' + constants.fail);
+				}
+				res.redirect('/albums');
 			});
-			console.log(failedItems);
-			req.flash('success', (data.length - failedItems.length) +  ' ' + constants.success);
-			if (failedItems.length > 0) return req.flash('fail', failedItems.length + ' ' + constants.fail);
-			res.redirect('/albums');
 		});
 	}
 });
+
+function saveItems(data, cb) {
+	var failedItems = [];
+
+	async.each(data, function (item, callback) {
+		new Record(item).save(function(error) {
+			if (error) { 
+				failedItems.push(item);
+			}
+			callback()
+		});
+	}, function () {
+			cb(failedItems);
+	});
+}
 
 module.exports = router;
