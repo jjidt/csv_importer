@@ -41,10 +41,10 @@ It will not allow repeats, and each album must have values for both the Artist a
 
 	npm test
 
-## Proposed Features
+## Next Steps
 
 - open up back-end as RESTful api
-- use client-side MVC framework to directly edit album fields and sync records with server
+- use client-side MVC framework to directly add, delete, or edit albums/album fields and sync records with server
 - allow sorting by any field directly on client-side
 - improve album-parse module to handle album titles containing commas
 - on form submit, navigate to page to fill in invalid information for unsaved albums
