@@ -12,11 +12,18 @@ body {
         margin-left: -85px;
         margin-top: 5px;
         margin-right: -100px; }
-    body .navbar .nav-links {
-      margin-top: 30px; }
+    body .navbar .nav-upload {
+      margin-top: 17px; }
       @media screen and (max-width: 767px) {
-        body .navbar .nav-links {
+        body .navbar .nav-upload {
           margin-top: -10px; } }
+      body .navbar .nav-upload .submit-btn {
+        margin-top: 4px;
+        background-color: #f8c816; }
+        body .navbar .nav-upload .submit-btn:hover {
+          background-color: rgba(0, 0, 0, 0.35); }
+      body .navbar .nav-upload label {
+        font-weight: 300; }
     body .navbar .alert-box {
       color: red; }
     body .navbar .success-box {
@@ -28,10 +35,6 @@ body {
     @media screen and (max-width: 767px) {
       body .csv-upload, body .album-list {
         margin-top: 220px; } }
-  body .csv-upload .submit-btn {
-    background-color: #f8c816; }
-    body .csv-upload .submit-btn:hover {
-      background-color: rgba(0, 0, 0, 0.35); }
   body .album-list-item {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;

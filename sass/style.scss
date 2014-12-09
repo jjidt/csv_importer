@@ -23,10 +23,20 @@ body {
 				margin-right: -100px;
 			}
 		}
-		.nav-links {
-			margin-top: 30px;
+		.nav-upload {
+			margin-top: 17px;
 			@media screen and (max-width: $break) {
 				margin-top: -10px;
+			}
+			.submit-btn {
+				margin-top: 4px;
+				background-color: $gold;
+				&:hover {
+					background-color: $translucentBlack;
+				}
+			}
+			label {
+				font-weight: 300;
 			}
 		}
 		.alert-box {
@@ -44,15 +54,6 @@ body {
 		margin-top: $content-margin-top;
 		@media screen and (max-width: $break) {
   	  		margin-top: $content-margin-top-break;
-		}
-	}
-
-	.csv-upload {
-		.submit-btn {
-			background-color: $gold;
-			&:hover {
-				background-color: $translucentBlack;
-			}
 		}
 	}
 

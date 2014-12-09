@@ -10,10 +10,11 @@ html
 				a(href='/')
 					img(src='images/albumimporter.svg')
 				ul(class='nav navbar-nav')
-			.col-sm-3.nav-links
-				a(href='/') IMPORT FILE  
-				span | 
-				a(href='/albums')  LIST ALBUMS
+			.col-sm-3.nav-upload
+				form(action='album', method='post', enctype='multipart/form-data' class='form-inline')
+					label(for='album_csv') upload .csv file with album information
+					input(type='file', name='album_csv')
+					input(type='submit' value='Submit' class='btn btn-xs submit-btn')
 			.col-sm-6
 				.alert-box= alert
 				.success-box= success
