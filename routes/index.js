@@ -6,7 +6,6 @@ var multSettings = {
  };
 var Record = require('../models/record');
 var albumParse = require('../helpers/album-parse');
-var _ = require('lodash');
 var constants = require('../constants');
 var async = require('async');
 
@@ -54,7 +53,7 @@ router.post('/album', multer(multSettings), function (req, res) {
 /**
  * turn array of objects into mongoose models and save to mongodb, keep track of unsaved items
  * @param  {[type]}   data [array of album information objects]
- * @param  {callback} cb   [function to be called when all records have been saved, provided with failed Items parameter]
+ * @param  {callback} cb   [function to be called when all records have been saved, provided with failed Items array as param]
  */
 function saveItems(data, cb) {
 	var failedItems = [];
