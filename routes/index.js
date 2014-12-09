@@ -47,12 +47,15 @@ router.post('/album', multer(multSettings), function (req, res) {
 				res.redirect('/albums');
 			});
 		});
+	} else {
+		req.flash('alert', constants.noFile);
+		res.redirect('back');
 	}
 });
 
 /**
  * turn array of objects into mongoose models and save to mongodb, keep track of unsaved items
- * @param  {[type]}   data [array of album information objects]
+ * @param  {array}  data [array of album information objects]
  * @param  {callback} cb   [function to be called when all records have been saved, provided with failed Items array as param]
  */
 function saveItems(data, cb) {
