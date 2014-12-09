@@ -1,13 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var multer = require('multer');
-var multSettings = {
-    inMemory: true
- };
-var Record = require('../models/record');
-var albumParse = require('../helpers/album-parse');
-var constants = require('../constants');
-var async = require('async');
+var express = require('express'),
+	router = express.Router(),
+	multer = require('multer'),
+	multSettings = {inMemory: true},
+	Record = require('../models/record'),
+	albumParse = require('../helpers/album-parse'),
+	constants = require('../constants'),
+	async = require('async');
 
 /* GET home page. */
 router.get('/', function (req, res) {

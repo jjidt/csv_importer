@@ -13,7 +13,7 @@ html
 			.col-sm-3.nav-upload
 				form(action='album', method='post', enctype='multipart/form-data' class='form-inline')
 					label(for='album_csv') upload .csv file with album information
-					input(type='file', name='album_csv')
+					input(type='file', name='album_csv' id='file-input')
 					input(type='submit' value='Submit' class='btn btn-xs submit-btn')
 			.col-xs-6.flash-messages
 				.alert-box= alert

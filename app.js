@@ -1,17 +1,15 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var config = require('./config');
-var flash = require('connect-flash');
-var session = require('express-session');
-
-var routes = require('./routes/index');
-
-var app = express();
+var express = require('express'),
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose'),
+    config = require('./config'),
+    flash = require('connect-flash'),
+    session = require('express-session'),
+    routes = require('./routes/index'),
+    app = express();
 
 //connect to database
 mongoose.connect(config.db[app.get('env')]);
@@ -33,9 +31,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: 'mindspaced',
-  resave: false,
-  saveUninitialized: true
+    secret: 'mindspaced',
+    resave: false,
+    saveUninitialized: true
 }));
 app.use(flash());
 
