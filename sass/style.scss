@@ -1,14 +1,25 @@
 @import "colors";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,800);
+
+$open-sans: 'Open Sans', sans-serif;
 
 body {
 	color: $black;
 	.album-list {
-		font-size: 25px;
+		font-family: $open-sans;
+		font-weight: 300;
+		font-size: 20px;
 		list-style-type: none;
+		
+		.artist {
+			font-weight: 800;
+		}
+
 		&:nth-child(odd) {
 			background-color: $offWhite;
 			color: $darkGray;
 		}
+		
 		&:nth-child(even) {
 			background-color: $white;
 			color: $black;
