@@ -51,6 +51,11 @@ router.post('/album', multer(multSettings), function (req, res) {
 	}
 });
 
+/**
+ * turn array of objects into mongoose models and save to mongodb, keep track of unsaved items
+ * @param  {[type]}   data [array of album information objects]
+ * @param  {callback} cb   [function to be called when all records have been saved, provided with failed Items parameter]
+ */
 function saveItems(data, cb) {
 	var failedItems = [];
 
