@@ -11,17 +11,16 @@ var async = require('async');
 
 /* GET home page. */
 router.get('/', function (req, res) {
-  	res.render('index', { 
-  		title: 'Album List', 
-  		alert: req.flash('alert')
-  	});
+  	res.redirect('/albums');
 });
 
 /* GET all albums */
 router.get('/albums', function (req, res) {
 	Record.find({}).sort({'release-year': -1}).exec(function (err, data) {
-		res.render('albums', {
+		res.render('album-index', {
+			title: 'Album List',
 			items: data,
+			alert: req.flash('alert'),
 			success: req.flash('success'),
 			fail: req.flash('fail')
 		});

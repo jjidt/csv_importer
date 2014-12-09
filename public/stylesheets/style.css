@@ -24,17 +24,20 @@ body {
           background-color: rgba(0, 0, 0, 0.35); }
       body .navbar .nav-upload label {
         font-weight: 300; }
-    body .navbar .alert-box {
-      color: red; }
-    body .navbar .success-box {
-      color: green; }
-    body .navbar .fail-box {
-      color: red; }
+    body .navbar .flash-messages {
+      min-width: 400px;
+      max-width: 600px; }
+      body .navbar .flash-messages .alert-box {
+        color: red; }
+      body .navbar .flash-messages .success-box {
+        color: green; }
+      body .navbar .flash-messages .fail-box {
+        color: red; }
   body .csv-upload, body .album-list {
-    margin-top: 140px; }
+    margin-top: 170px; }
     @media screen and (max-width: 767px) {
       body .csv-upload, body .album-list {
-        margin-top: 220px; } }
+        margin-top: 280px; } }
   body .album-list-item {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;

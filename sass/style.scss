@@ -2,8 +2,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,800);
 
 $open-sans: 'Open Sans', sans-serif;
-$content-margin-top: 140px;
-$content-margin-top-break: 220px;
+$content-margin-top: 170px;
+$content-margin-top-break: 280px;
 $break: 767px;
 
 
@@ -39,14 +39,18 @@ body {
 				font-weight: 300;
 			}
 		}
-		.alert-box {
-			color: red;
-		}
-		.success-box {
-			color: green;
-		}
-		.fail-box {
-			color: red;
+		.flash-messages {
+			min-width: 400px;
+			max-width: 600px;
+			.alert-box {
+				color: red;
+			}
+			.success-box {
+				color: green;
+			}
+			.fail-box {
+				color: red;
+			}
 		}
 	}
 
