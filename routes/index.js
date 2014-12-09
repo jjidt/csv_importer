@@ -16,7 +16,7 @@ router.get('/', function (req, res) {
 router.get('/albums', function (req, res) {
 	Record.find({}).sort({'release-year': -1}).exec(function (err, data) {
 		res.render('album-index', {
-			title: 'Album List',
+			title: 'Album Importer',
 			items: data,
 			alert: req.flash('alert'),
 			success: req.flash('success'),
@@ -34,15 +34,16 @@ router.post('/album', multer(multSettings), function (req, res) {
 			if (err) {
 				req.flash('alert', err.message);
 				res.redirect('back');
-			}
 
-			saveItems(data, function (failedItems) {
-				req.flash('success', (data.length - failedItems.length) + ' ' + constants.success);
-				if (failedItems.length > 0) {
-					req.flash('fail', failedItems.length + ' ' + constants.fail);
-				}
-				res.redirect('/albums');
-			});
+			} else {
+				saveItems(data, function (failedItems) {
+					req.flash('success', (data.length - failedItems.length) + ' ' + constants.success);
+					if (failedItems.length > 0) {
+						req.flash('fail', failedItems.length + ' ' + constants.fail);
+					}
+					res.redirect('/albums');
+				});
+			}
 		});
 	} else if (req.files && req.files.album_csv) {
 		req.flash('alert', constants.wrongType);
