@@ -1,10 +1,12 @@
 var expect = require('chai').expect,
 	Browser = require('zombie'),
 	app = require('../app'),
-	browser;
+	browser,
+	mongoose = require('mongoose');
 
 
 describe('submitting a file', function () {
+	
 	before(function () {
 		app.set('port', 1969);
 
@@ -13,6 +15,12 @@ describe('submitting a file', function () {
 		});
 		Browser.localhost('album-upload.com', 1969);
 		browser = Browser.create();
+	});
+
+	after(function(done) {
+		mongoose.connection.db.dropDatabase(function(){
+			done();
+		});
 	});
 
 	it('should successfully submit a correctly formatted file', function(done) {

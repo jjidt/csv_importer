@@ -11,11 +11,17 @@ describe(Record, function() {
     	mongoose.connect(testDB, done);
 	});
 
+	after(function(done) {
+		mongoose.connection.db.dropDatabase(function(){
+			done();
+		});
+	});
+
 	describe('#save()', function() {
 		it('should successfully save a record to the database', function(done) {
 			new Record({
-				artist: 'a',
-				album: 'b', 
+				artist: 'aaaaaa',
+				album: 'bbbbbb', 
 				'release-year': 1994, 
 				rating: 5
 			})
