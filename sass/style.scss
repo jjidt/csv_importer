@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,800);
 
 $open-sans: 'Open Sans', sans-serif;
+$content-margin-top: 140px;
 
 body {
 	color: $black;
@@ -11,13 +12,17 @@ body {
 		height: 120px;
 		border-bottom: 2px solid $black;
 		img {
-			margin-left: -140px;
+			margin-left: -75px;
 			margin-top: 5px;
 		}
 	}
 
+	.csv-upload {
+		margin-top: $content-margin-top;
+	}
+
 	.album-list {
-		margin-top: 140px;
+		margin-top: $content-margin-top;
 	}
 
 	.album-list-item {

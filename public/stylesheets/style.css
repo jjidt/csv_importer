@@ -6,8 +6,10 @@ body {
     height: 120px;
     border-bottom: 2px solid black; }
     body .navbar img {
-      margin-left: -140px;
+      margin-left: -75px;
       margin-top: 5px; }
+  body .csv-upload {
+    margin-top: 140px; }
   body .album-list {
     margin-top: 140px; }
   body .album-list-item {

@@ -1,8 +1,7 @@
 extends layout
 
 block content
-    .container
-        h1(class="header")= title
+    .container.csv-upload
         form(action="album", method="post", enctype="multipart/form-data")
             .form-group
                 label(for="album_csv") upload .csv file with album information
