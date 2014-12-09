@@ -5,7 +5,22 @@ $open-sans: 'Open Sans', sans-serif;
 
 body {
 	color: $black;
+
+	.navbar {
+		background-color: $white;
+		height: 120px;
+		border-bottom: 2px solid $black;
+		img {
+			margin-left: -140px;
+			margin-top: 5px;
+		}
+	}
+
 	.album-list {
+		margin-top: 140px;
+	}
+
+	.album-list-item {
 		font-family: $open-sans;
 		font-weight: 300;
 		font-size: 20px;

@@ -1,19 +1,28 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,800);
 body {
   color: black; }
+  body .navbar {
+    background-color: #FFFFFF;
+    height: 120px;
+    border-bottom: 2px solid black; }
+    body .navbar img {
+      margin-left: -140px;
+      margin-top: 5px; }
   body .album-list {
+    margin-top: 140px; }
+  body .album-list-item {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
     font-size: 20px;
     list-style-type: none; }
-    body .album-list .artist, body .album-list .rating {
+    body .album-list-item .artist, body .album-list-item .rating {
       font-weight: 800; }
-    body .album-list .rating {
+    body .album-list-item .rating {
       color: #f8c816; }
-    body .album-list:nth-child(odd) {
+    body .album-list-item:nth-child(odd) {
       background-color: #f9f9f9;
       color: #4C4C4C; }
-    body .album-list:nth-child(even) {
+    body .album-list-item:nth-child(even) {
       background-color: #FFFFFF;
       color: black; }
 

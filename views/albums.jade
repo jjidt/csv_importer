@@ -2,9 +2,9 @@ extends layout
 
 block content
 	a(href='/')
-	ul
+	ul.album-list
 		each item in items
-			.album-list
+			.album-list-item
 				li
 					.artist= item.artist 
 					.album= item.album 
