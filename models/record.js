@@ -3,21 +3,22 @@ var mongoose = require('mongoose');
 var recordSchema = new mongoose.Schema({
 	artist: {
 		type: String,
-		index: true,
 		required: true
 	},
 	album: {
 		type: String,
-		index: true,
 		required: true
 	},
 	'release-year': {
 		type: Number,
+		index: true
 	},
 	rating: {
 		type: Number,
 	}
 });
+
+recordSchema.index({ artist: 1, album: 1 }, { unique: true });
 
 var Record = mongoose.model('Record', recordSchema);
 
