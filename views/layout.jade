@@ -5,7 +5,9 @@ html
 		link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
 		link(rel="stylesheet", href="/stylesheets/style.css")
 	body
-		.alert-box= alert
-		.success-box= success
-		.fail-box= fail
+		.navbar.navbar-fixed-top
+			.container
+				.alert-box= alert
+				.success-box= success
+				.fail-box= fail
 		block content

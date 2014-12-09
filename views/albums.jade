@@ -8,5 +8,14 @@ block content
 				li
 					.artist= item.artist 
 					.album= item.album 
-					.release-year= 'Release Year: ' + item['release-year']
-					.rating= 'Rating: ' + item.rating
+					.release-year
+						if item['release-year']
+							= 'Release Year: ' + item['release-year']
+						else
+							= 'Release Year: unknown'
+					.rating
+						if item.rating
+							- for (var i = 0; i < item.rating; i++)
+								= '*'
+						else
+							= 'no rating'

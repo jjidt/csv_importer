@@ -11,8 +11,12 @@ body {
 		font-size: 20px;
 		list-style-type: none;
 		
-		.artist {
+		.artist, .rating {
 			font-weight: 800;
+		}
+
+		.rating {
+			color: $gold;
 		}
 
 		&:nth-child(odd) {

@@ -6,8 +6,10 @@ body {
     font-weight: 300;
     font-size: 20px;
     list-style-type: none; }
-    body .album-list .artist {
+    body .album-list .artist, body .album-list .rating {
       font-weight: 800; }
+    body .album-list .rating {
+      color: #f8c816; }
     body .album-list:nth-child(odd) {
       background-color: #f9f9f9;
       color: #4C4C4C; }
