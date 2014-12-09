@@ -86,8 +86,9 @@ describe('albumParse', function() {
 		fs.readFile('csv/rating-range.csv', function (err, data) {
 			if (err) throw err;
 			albumParse(data, function (err, parsedData) {
-				expect(parsedData[2].rating).to.eq('null');
+				expect(parsedData[2].rating).to.eq(null);
 				expect(parsedData[1].rating).to.eq(3);
+				done();
 			});
 		});
 	});

@@ -43,7 +43,7 @@ function albumParse (csvFile, callback) {
 			'artist': splitItems[0].trim(),
 			'album': splitItems[1].trim(),
 			'release-year': +splitItems[2] || null,
-			'rating': +splitItems[3] || null
+			'rating': +splitItems[3] >= 1 && +splitItems[3] <= 5 ? +splitItems[3] : null
 		};
 		data.push(albumData);
 	});
