@@ -3,6 +3,7 @@
 A small web app built in NodeJS/express for uploading and listing album information.  
 
 The uploader only accepts CSV files specifically structured with a header line of:
+
 	'artist,album,Release Year,Rating' 
 
 and following lines of album information based on that structure.
