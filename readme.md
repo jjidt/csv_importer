@@ -18,37 +18,37 @@ It will not allow repeats, and each album must have values for both the Artist a
 
 -cd to project directory
 
-	'npm install'
-	'gem install sass'
+	npm install
+	gem install sass
 
 -to run a watcher that will live-compile your Sass files as changes happen
 
-	'grunt'
+	grunt
 
 -to manually compile Sass files
 
-	'grunt sass'
+	grunt sass
 
 -to lint your javascript
 
-	'grunt jshint'
+	grunt jshint
 
 -start server: default port is 3000
 	
-	'npm start'
+	npm start
 
 ## Testing
 
-	'npm test'
+	npm test
 
 ## Proposed Features
 
-	- open up back-end as RESTful api
-	- use client-side MVC framework to directly edit album fields and sync records with server
-	- allow sorting by any field directly on client-side
-	- improve album-parse module to handle album titles containing commas
-	- on form submit, navigate to page to fill in invalid information for unsaved albums
-	- pre-save hook to grab url for album artwork
+- open up back-end as RESTful api
+- use client-side MVC framework to directly edit album fields and sync records with server
+- allow sorting by any field directly on client-side
+- improve album-parse module to handle album titles containing commas
+- on form submit, navigate to page to fill in invalid information for unsaved albums
+- pre-save hook to grab url for album artwork
 
 ## Authors
 
