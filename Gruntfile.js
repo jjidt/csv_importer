@@ -13,9 +13,21 @@ module.exports = function(grunt) {
 				files: '**/*.scss',
 				tasks: ['sass']
 			}
-		}
+		},
+		jshint: {
+			files: ['Gruntfile.js', 'routes/**/*.js', 'test/**/*.js', 'helpers/**/*.js'],
+			options: {
+			// options here to override JSHint defaults
+				globals: {
+					console: true,
+					module: true,
+					document: true
+				}
+			}
+		},
 	});
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.registerTask('default',['watch']);
-}
+};
