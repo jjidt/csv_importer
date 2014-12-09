@@ -1,1 +1,17 @@
-@import "colors"
+@import "colors";
+
+body {
+	color: $black;
+	.album-list {
+		font-size: 25px;
+		list-style-type: none;
+		&:nth-child(odd) {
+			background-color: $offWhite;
+			color: $darkGray;
+		}
+		&:nth-child(even) {
+			background-color: $white;
+			color: $black;
+		}
+	}
+}

@@ -1,10 +1,12 @@
 extends layout
 
 block content
+	a(href='/')
 	ul
 		each item in items
-			li
-				.artist= 'Artist: ' + item.artist 
-				.album= 'Album: ' + item.album 
-				.release-year= 'Release Year: ' + item['release-year']
-				.rating= 'Rating: ' + item.rating
+			.album-list
+				li
+					.artist= 'Artist: ' + item.artist 
+					.album= 'Album: ' + item.album 
+					.release-year= 'Release Year: ' + item['release-year']
+					.rating= 'Rating: ' + item.rating
